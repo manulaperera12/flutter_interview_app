@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:manula_perera_flutter_interview/screens/splash_screen.dart';
 
 void main() {
+  // Set the status bar color to transparent
+  SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+          // Set the status bar color to transparent
+          statusBarIconBrightness:
+          Brightness.dark, // Set the status bar icons to dark color
+          ),
+      );
   runApp(const MyApp());
 }
 
