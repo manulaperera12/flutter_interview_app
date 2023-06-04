@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manula_perera_flutter_interview/screens/homeScreen.dart';
-import 'package:manula_perera_flutter_interview/screens/splashScreen.dart';
+import 'package:manula_perera_flutter_interview/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +21,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

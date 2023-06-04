@@ -1,16 +1,18 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:manula_perera_flutter_interview/components/animatedImage.dart';
+import 'package:manula_perera_flutter_interview/components/animated_image.dart';
 
-import 'homeScreen.dart';
+import 'home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  SplashScreenState createState() => SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
+class SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _opacityAnimation;
@@ -35,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen>
         // Animation completed, navigate to the home screen
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => HomeScreen()),
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
         );
       }
     });
@@ -63,7 +65,7 @@ class _SplashScreenState extends State<SplashScreen>
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    AnimatedMovingImage(
+                    const AnimatedMovingImage(
                           imagePath: AssetImage('assets/images/ssimage.png'),
                         ),
                     const SizedBox(

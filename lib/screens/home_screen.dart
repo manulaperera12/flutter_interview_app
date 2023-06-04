@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:manula_perera_flutter_interview/components/mainContainerWidget.dart';
-import '../components/bottomNavigation.dart';
-import '../components/categoryTilesWidget.dart';
-import '../components/productsCard.dart';
+import 'package:manula_perera_flutter_interview/components/main_container_widget.dart';
+import '../components/bottom_navigation.dart';
+import '../components/category_tiles_widget.dart';
+import '../components/products_card.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -20,13 +22,6 @@ class _HomeScreenState extends State<HomeScreen> {
       _currentIndex = index;
     });
   }
-
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Home'),
-    Text('Favorites'),
-    Text('Settings'),
-    Text('Profile'),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
             size: 30,
           ),
           onPressed: () {
-            print('Menu button pressed!');
+            debugPrint('Menu button pressed!');
           },
         ),
         actions: [
@@ -54,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
               size: 26,
             ),
             onPressed: () {
-              print('Search button pressed!');
+              debugPrint('Search button pressed!');
             },
           ),
           IconButton(
@@ -64,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
               size: 26,
             ),
             onPressed: () {
-              print('Checkout button pressed!');
+              debugPrint('Checkout button pressed!');
             },
           ),
         ],
@@ -74,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.all(10.0),
           child: SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Container(
                   padding: const EdgeInsets.all(16.0),
@@ -97,7 +92,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: CategoryTilesWidget(),
                   ),
                 ),
-                const Products(),
+                // Expanded(child: const Products()),
+                const SizedBox(
+                  height: 298,
+                    child: Products())
               ],
             ),
           ),

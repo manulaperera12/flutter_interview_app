@@ -27,7 +27,7 @@ class _CategoryTilesWidgetState extends State<CategoryTilesWidget> {
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
           onTap: () {
-            print("Category Clicked!");
+            debugPrint("Category Clicked!");
             setState(() {
               _selectedCategoryIndex = index;
             });

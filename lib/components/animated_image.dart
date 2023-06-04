@@ -5,7 +5,7 @@ class AnimatedMovingImage extends StatefulWidget {
   final double? width;
   final double? height;
   final BoxFit? fit;
-  AnimatedMovingImage({required this.imagePath, this.width, this.height, this.fit});
+  const AnimatedMovingImage({super.key, required this.imagePath, this.width, this.height, this.fit});
 
   @override
   _AnimatedMovingImageState createState() => _AnimatedMovingImageState();
@@ -21,7 +21,7 @@ class _AnimatedMovingImageState extends State<AnimatedMovingImage> with SingleTi
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 1500),
     )..repeat(reverse: true);
     _animation = Tween(begin: -15.0, end: 15.0).animate(_animationController);
   }

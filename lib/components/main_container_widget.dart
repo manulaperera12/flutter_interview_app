@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'animatedImage.dart';
+import 'animated_image.dart';
 import 'button.dart';
 
 class MainContainerWidget extends StatefulWidget {
@@ -46,7 +46,7 @@ class _MainContainerWidgetState extends State<MainContainerWidget> {
                   ),
                    Button(
                     text: "Buy Now!",
-                    onPressed: () => print("Buy Button Clicked!"),
+                    onPressed: () => debugPrint("Buy Button Clicked!"),
                   )
                 ],
               ),
@@ -59,8 +59,8 @@ class _MainContainerWidgetState extends State<MainContainerWidget> {
             offset: const Offset(95.0, -10), // Set the X and Y offset
             child: Transform.scale(
               scale: .61, // Set the scale factor
-              child: AnimatedMovingImage(
-                imagePath: const AssetImage("assets/images/vr_main.png"),
+              child: const AnimatedMovingImage(
+                imagePath: AssetImage("assets/images/vr_main.png"),
               ),
             ),
           ),

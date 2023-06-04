@@ -29,7 +29,7 @@ class MyBottomNavigationBar extends StatelessWidget {
         //--- Define the items in the bottom navigation bar
         BottomNavigationBarItem(
           icon: InkWell(
-            onTap: () => print("Home Clicked!"),
+            onTap: () => debugPrint("Home Clicked!"),
             child: const Icon(
                 Icons.home_outlined,
               size: 30,
@@ -39,7 +39,7 @@ class MyBottomNavigationBar extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: InkWell(
-            onTap: () => print("nav 2 Clicked!"),
+            onTap: () => debugPrint("nav 2 Clicked!"),
             child: const Icon(
                 Icons.send_outlined,
               size: 30,
@@ -66,7 +66,7 @@ class MyBottomNavigationBar extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: InkWell(
-            onTap: () => print("nav 4 Clicked!"),
+            onTap: () => debugPrint("nav 4 Clicked!"),
             child: const Icon(
                 Icons.person_outline_rounded,
               size: 30,

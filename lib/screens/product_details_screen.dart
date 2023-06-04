@@ -1,52 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:manula_perera_flutter_interview/components/animatedImage.dart';
-import '../components/featuresWidget.dart';
+import 'package:manula_perera_flutter_interview/components/animated_image.dart';
+import '../components/features_widget.dart';
 
-class Product {
-  final String id;
-  final String title;
-  final String price;
-  final String description;
-  final String imageUrl;
 
-  Product({
-    required this.id,
-    required this.title,
-    required this.price,
-    required this.description,
-    required this.imageUrl,
-  });
-}
+class ProductDetailsPage extends StatelessWidget {
+  final dynamic product;
 
-class ProductDetailsPage extends StatefulWidget {
-  final Map<String, dynamic> product;
+  const ProductDetailsPage({super.key, required this.product});
 
-  ProductDetailsPage({required this.product});
+  final Color desFontColor = const Color(0xFF4C4C4D);
 
-  @override
-  State<ProductDetailsPage> createState() => _ProductDetailsPageState();
-}
-
-class _ProductDetailsPageState extends State<ProductDetailsPage> {
-  Color desFontColor = const Color(0xFF4C4C4D);
-  Color priceFontColor = const Color(0xFF727273);
-
-  late Product _product;
-
-  @override
-  void initState() {
-    super.initState();
-    //--- Initialize the _product variable with the values from the widget.product map
-    _product = Product(
-      id: widget.product['id'] ?? '',
-      title: widget.product['title'] ?? '',
-      price: widget.product['price'] ?? '',
-      description: widget.product['description'] ?? '',
-      imageUrl: widget.product['images'] ?? '',
-    );
-  }
+  final Color priceFontColor = const Color(0xFF727273);
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +60,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
             child: Transform.scale(
               scale: .80,
               child: AnimatedMovingImage(
-                imagePath: NetworkImage(_product.imageUrl),
+                imagePath: NetworkImage(product['images'],),
                 width: double.infinity,
                 height: 200,
                 fit: BoxFit.cover,
@@ -127,7 +93,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      _product.title,
+                                      product['title'],
                                       style: GoogleFonts.openSans(
                                         fontSize: 23,
                                         fontWeight: FontWeight.bold,
@@ -193,7 +159,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                 width: 10,
                               ),
                               Text(
-                                _product.price,
+                                product['price'],
                                 style: GoogleFonts.openSans(
                                     fontSize: 17,
                                     color: Colors.black87,
@@ -203,7 +169,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                           ),
                           const SizedBox(height: 15),
                           Text(
-                            _product.description,
+                            product['description'],
                             style: GoogleFonts.poppins(
                                 fontSize: 14,
                                 color: Colors.black54,
@@ -215,7 +181,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                             padding: const EdgeInsets.only(top: 30, bottom: 30),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 FeaturesWidget(
                                   icon: Icons.remove_red_eye_outlined,
                                   text: "Improved Optics",
