@@ -130,7 +130,7 @@ class ProductDetailsPage extends StatelessWidget {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsets.only(top: 4),
+                                              const EdgeInsets.only(top: 5),
                                           child: Text(
                                             '5 ',
                                             style: GoogleFonts.openSans(
@@ -141,7 +141,7 @@ class ProductDetailsPage extends StatelessWidget {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsets.only(top: 4),
+                                              const EdgeInsets.only(top: 5),
                                           child: Text(
                                             '(28 Reviews)',
                                             style: GoogleFonts.openSans(
